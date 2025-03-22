@@ -3,18 +3,22 @@ let container = document.querySelector(".container");
 let pendingTask=document.querySelector(".pendingTask")
 
 let makeToDOList = ()=>{
+
     let inputField = document.getElementById("inputField").value;
 
-    if(!inputField || inputField===""){
-        let errorMsg = document.createElement("p");
+    if(inputField===""){
+      let errorMsg = document.createElement("p");
+
         errorMsg.textContent="SORRY! Empty input is not allowed"
         errorMsg.classList.add("showError");
         document.body.appendChild(errorMsg);
+      
         setTimeout(()=>{
           errorMsg.textContent="";
           errorMsg.classList.remove("showError")
         },2000)
         return;
+      
     }
     let makeList = document.createElement("p");
     makeList.textContent= inputField;
